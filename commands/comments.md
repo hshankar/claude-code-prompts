@@ -6,6 +6,6 @@ Look at the local code changes that are not yet committed to git.
   - Explanations that are just obvious because they are close to method names.
 - Do not delete all comments:
   - Don't remove comments that start with TODO.
-  - Don't remove commenmts if doing so would make a scope empty, like an empty catch block or an empty else block.
+  - Don't remove comments if doing so would make a scope empty, like an empty catch block or an empty else block.
   - Don't remove comments that suppress linters or formatters, like `// prettier-ignore`
 - If you find any end-of-line comments, move them above the code they describe. Comments should go on their own lines.

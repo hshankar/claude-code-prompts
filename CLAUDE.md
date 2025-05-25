@@ -92,14 +92,14 @@
 
 - Run `just precommit` (if a `justfile` exists and contains a `precommit` recipe)
 - Stage changes carefully and individually using `git add <file1> <file2> ...`
-  - Only staged files you remember working on
+  - Only stage files you remember working on
   - Avoid commands like `git add .` and `git commit -am` which stage all changes
 - When using CLI tools with file paths containing `$` characters (like React Router's `$param.tsx` files):
   - Use single quotes: `git add 'app/routes/_protected.foo.$bar.tsx'`
-- Prepare a commit message the conforms to the instructions above
+- Prepare a commit message that conforms to the instructions above
   - Commit messages should not include a Claude attribution footer
   - Don't write: 🤖 Generated with [Claude Code](https://claude.ai/code)
-  - Don't write: Co-Authored-By: Claude <noreply@anthropic.com>"
+  - Don't write: Co-Authored-By: Claude <noreply@anthropic.com>
 - Echo exactly this: Ready to commit: `git commit --message "<message>"`
 - Confirm with the user, and then run the exact same command
 - If pre-commit hooks fail, then there are now local changes
