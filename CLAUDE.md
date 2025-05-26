@@ -74,19 +74,17 @@
 
 ## LLM Context
 
-- Extra context for LLMs is stored in the `.llm` directory (in the project directory)
+- Extra context for LLMs may be stored in the `.llm/` directory
+  - If `.llm/` exists, it will be at the root directory of the git repository
+  - `.git/info/exclude` includes `/.llm`, so don't `git add` its contents
 - Editable context:
-  - `.llm/todo.md`
-    - If `.llm/todo.md` exists, it will be in the root of the project's git directory. Don't look for it elsewhere.
-    - If it exists, it is the task list we are working on. As you complete tasks, mark the checkboxes as complete, like `- [x] The task`
-    - The file is ignored in `.git/info/exclude`. Don't try to git add it.
-  - `CLAUDE.local.md`
-    - The file is your per-project memory. When user prompts contradict memory, go ahead and edit these files to keep them up-to-date.
-    - The file is ignored in `.git/info/exclude` and not tracked by git
+  - If `.llm/todo.md` exists, it is the task list we are working on.
+  - As you complete tasks, mark the checkboxes as complete, like `- [x] The task`
+  - As we work on an implementation, plans will change. Feel free to edit the task list to keep it relevant and in sync with your plans.
 - Read-only context:
-  - Anything else in the `.llm/` directory besides `todo.md` is read-only context for the LLM's reference
-  - The directory contains entire git clones for tools we use
-  - The directory contains saved documentation
+  - Everything else in the `.llm/` directory is read-only context for the your reference
+  - It contains entire git clones for tools we use
+  - It contains saved documentation
 
 ## Git Commits
 
