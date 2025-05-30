@@ -16,12 +16,20 @@
 - Emoji and unicode characters are welcome
   - Use them in code, commit messages, and docs
 
+## Git Commits
+
+- Commit messages should:
+  - Start with a present-tense verb (Fix, Add, Implement, etc.)
+  - Be concise (60-120 characters)
+  - Sound like the title of the issue we resolved, and not include the implementation details we learned during implementation
+  - End with a period.
+
 ## Tests
 
 - Test names should not include the word "test"
 - Test assertions should be strict
   - Bad: `expect(content).to.include('valid-content')`
-  - Better: `expect(content).to.equal("{ 'key': 'valid-content' }")`
+  - Better: `expect(content).to.equal({ key: 'valid-content' })`
   - Best: `expect(content).to.deep.equal({ key: 'valid-content' })`
 - Use mocking as a last resort
   - Don't mock a database, if it's possible to use an in-memory fake implementation instead
@@ -32,26 +40,18 @@
   - Mocking means replacing behavior, by replacing method or function bodies, using a mocking framework
   - In other cases use the words "fake" or "example"
 
-## Git Commits
-
-- Commit messages should:
-  - Start with a present-tense verb (Fix, Add, Implement, etc.)
-  - Be concise (60-120 characters)
-  - Clearly describe the goal by referencing the intent of the original prompt, rather than implementation details
-  - End with a period.
-
 # Instructions for LLMs
 
 ## Code Style
 
 - Use comments sparingly
-  - Don't comment out code
-    - Remove it instead
-  - Don't add comments that describe the process of changing code
-    - Comments should not include past tense verbs like added, removed, or changed
-  - Don't add comments that emphasize different versions of the code, like "this code now handles"
-  - Do not use end-of-line comments
-    - Place comments above the code they describe
+- Don't comment out code
+  - Remove it instead
+- Don't add comments that describe the process of changing code
+  - Comments should not include past tense verbs like added, removed, or changed
+- Don't add comments that emphasize different versions of the code, like "this code now handles"
+- Do not use end-of-line comments
+  - Place comments above the code they describe
 
 ## Conversation
 
@@ -68,6 +68,7 @@
 
 - When a code change is ready, we need to verify it passes the build
 - Don't run long-lived processes like development servers or file watchers
+  - Don't run `npm run dev`
 - If the build is slow or logs a lot, don't run it
   - Echo copy/pasteable commands and ask the user to run it
 - If build speed is not obvious, figure it out and add notes to project-specific memory
@@ -88,12 +89,12 @@
 
 ## Git Commits
 
-- Run `just precommit` (if a `justfile` exists and contains a `precommit` recipe)
-- Stage changes carefully and individually using `git add <file1> <file2> ...`
-  - Only stage files you remember working on
-  - Avoid commands like `git add .` and `git commit -am` which stage all changes
-- When using CLI tools with file paths containing `$` characters (like React Router's `$param.tsx` files):
-  - Use single quotes: `git add 'app/routes/_protected.foo.$bar.tsx'`
+- If a `justfile` exists and contains a `precommit` recipe, run it before committing.
+- Stage individually using `git add <file1> <file2> ...`
+  - Only stage the files you edited
+  - Avoid commands like `git add .` and `git add -A` and `git commit -am` which stage all changes
+- Use single quotes around file names containing `$` characters
+  - Example: `git add 'app/routes/_protected.foo.$bar.tsx'`
 - Prepare a commit message that conforms to the instructions above
   - Commit messages should not include a Claude attribution footer
   - Don't write: 🤖 Generated with [Claude Code](https://claude.ai/code)
