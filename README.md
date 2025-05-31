@@ -1,22 +1,22 @@
-# `claude` code configuration
+# 🤖 `claude` code configuration
 
 My development workflow revolves around a markdown todo list and two custom commands: `/user:todo` for implementing tasks and `/user:commit` for committing changes.
 
 I wrote about my [development workflow with Claude Code](https://motlin.com/blog/claude-code-configuration) on motlin.com, and walk through the contents of the files there.
 
-## Overview
+## 📋 Overview
 
 - **`.llm/todo.md`** - A markdown checklist that persists across sessions
 - **`/user:todo`** - Custom command to implement one task
 - **`/user:commit`** - Custom command to commit changes
 
-## Creating the Task List
+## 📝 Creating the Task List
 
 I usually create `.llm/todo.md` by chatting with a thinking model. I'll use ChatGPT if I feel like talking out loud, or Gemini if I don't. At the end of the conversation, I'll ask it to summarize into a markdown checklist. I'll ask that each checkbox represent an atomic piece of work that can be tested and committed independently, and that they ordered by imlpementation order rather than importance.
 
-## The Development Loop
+## 🔄 The Development Loop
 
-### 1. Work on Next Task
+### 1. 🎯 Work on Next Task
 
 I invoke my todo command:
 ```
@@ -30,7 +30,7 @@ This reads `.llm/todo.md`, finds the next incomplete task, shows me the context,
 - [ ] Second task
 ```
 
-### 2. Commit the Changes
+### 2. 💾 Commit the Changes
 
 When I'm happy with the implementation:
 ```
@@ -39,7 +39,7 @@ When I'm happy with the implementation:
 
 This stages only the files that Claude edited and creates a commit message. My global CLAUDE.md has it run `just precommit` automatically, so tests run before each commit.
 
-### 3. Start Fresh or Continue
+### 3. 🔄 Start Fresh or Continue
 
 At this point I peek at the next task and consider whether it's related to the one we just finished.
 
@@ -56,7 +56,7 @@ After existing, I one-shot the next task with:
 $ claude '/user:todo'
 ```
 
-## Why This Works for Me
+## 💡 Why This Works for Me
 
 If you're already writing quality GitHub issues, please don't stop. I don't often have the discipline.
 
@@ -64,7 +64,7 @@ The todo.md is a simple way to order and reorder tasks and helps me keep moving.
 
 As I scale up to a whole team of people working with LLMs, I'd like to experiment with getting Claude to convert `todo.md` into GitHub issues.
 
-## Real Example
+## 🎬 Real Example
 
 ```bash
 ❯ claude '/user:todo'
@@ -112,7 +112,7 @@ As I scale up to a whole team of people working with LLMs, I'd like to experimen
 ❯ claude '/user:todo'
 ```
 
-## The Commands
+## 🛠️ The Commands
 
 The full prompts are in this repo:
 - [`commands/todo.md`](commands/todo.md) implements `/user:todo`

@@ -1,6 +1,6 @@
-# Instructions for people AND LLMs
+# 🧑‍💻 Instructions for people AND LLMs
 
-## Code Style
+## 🎨 Code Style
 
 - Don't write forgiving code
   - Don't permit multiple input formats
@@ -16,7 +16,7 @@
 - Emoji and unicode characters are welcome
   - Use them in code, commit messages, and docs
 
-## Git Commits
+## 📝 Git Commits
 
 - Commit messages should:
   - Start with a present-tense verb (Fix, Add, Implement, etc.)
@@ -24,7 +24,7 @@
   - Sound like the title of the issue we resolved, and not include the implementation details we learned during implementation
   - End with a period.
 
-## Tests
+## 🧪 Tests
 
 - Test names should not include the word "test"
 - Test assertions should be strict
@@ -40,9 +40,9 @@
   - Mocking means replacing behavior, by replacing method or function bodies, using a mocking framework
   - In other cases use the words "fake" or "example"
 
-# Instructions for LLMs
+# 🤖 Instructions for LLMs
 
-## Code Style
+## 🎨 Code Style
 
 - Use comments sparingly
 - Don't comment out code
@@ -53,7 +53,7 @@
 - Do not use end-of-line comments
   - Place comments above the code they describe
 
-## Conversation
+## 💬 Conversation
 
 - If the user asks a question, only answer the question, do not edit code
 - Don't say:
@@ -64,7 +64,7 @@
   - any other introduction or transition
 - Immediately get to the point
 
-## Build Commands
+## 🔨 Build Commands
 
 - When a code change is ready, we need to verify it passes the build
 - Don't run long-lived processes like development servers or file watchers
@@ -73,7 +73,7 @@
   - Echo copy/pasteable commands and ask the user to run it
 - If build speed is not obvious, figure it out and add notes to project-specific memory
 
-## LLM Context
+## 🧠 LLM Context
 
 - Extra context for LLMs may be stored in the `.llm/` directory
   - If `.llm/` exists, it will be at the root directory of the git repository
@@ -87,7 +87,7 @@
   - It contains entire git clones for tools we use
   - It contains saved documentation
 
-## Git Commits
+## 📝 Git Commits
 
 - If a `justfile` exists and contains a `precommit` recipe, run it before committing.
 - Stage individually using `git add <file1> <file2> ...`
@@ -105,6 +105,6 @@
   - `git add` those changes and try again
   - Never use `git commit --no-verify`
 
-## Tool Use
+## 🛠️ Tool Use
 I replaced `cd` with `zoxide`. Use `command cd` to change directories.
 
