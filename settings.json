@@ -54,7 +54,8 @@
     "deny": [
       "Bash(npm run dev:*)",
       "Bash(npm run serve:*)",
-      "Bash(npm run start:*)"
+      "Bash(npm run start:*)",
+      "Bash(git push:*)"
     ]
   },
   "enabledMcpjsonServers": [
