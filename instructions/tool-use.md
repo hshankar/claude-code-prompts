@@ -1,0 +1,1 @@
+I replaced `cd` with `zoxide`. Use `command cd` to change directories.

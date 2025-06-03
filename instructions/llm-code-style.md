@@ -1,0 +1,8 @@
+- Use comments sparingly
+- Don't comment out code
+  - Remove it instead
+- Don't add comments that describe the process of changing code
+  - Comments should not include past tense verbs like added, removed, or changed
+- Don't add comments that emphasize different versions of the code, like "this code now handles"
+- Do not use end-of-line comments
+  - Place comments above the code they describe
