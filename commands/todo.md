@@ -1,3 +1,5 @@
+Find and implement the next incomplete task from the project todo list.
+
 - Read the file `.llm/todo.md`
   - The file will only exist in this directory or in the main repository if we're in a worktree.
   - First try reading `./.llm/todo.md`
