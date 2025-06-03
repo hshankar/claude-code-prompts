@@ -1,1 +1,2 @@
-I replaced `cd` with `zoxide`. Use `command cd` to change directories.
+- I replaced `cd` with `zoxide`. Use `command cd` to change directories.
+- This is the only command that needs to be prefixed with `command`. Don't prefix `git` with `command git`.
