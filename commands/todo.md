@@ -10,11 +10,11 @@ Find and implement the next incomplete task from the project todo list.
 - Echo context to the user including the previous completed task and the current task we just found
   - Use the format:
 
-> ⏺ The previous completed task was:
->  - [x] Style button to be compact with icon and hover tooltip
->
->  The next incomplete task is:
->  - [ ] Create Modal component in `src/components/ui/Modal.tsx`
+⏺ The previous completed task was:
+ - [x] Style button to be compact with icon and hover tooltip
+
+ The next incomplete task is:
+ - [ ] Create Modal component in `src/components/ui/Modal.tsx`
 
 - Think hard about the plan
 - Confirm the plan with the user before proceeding
