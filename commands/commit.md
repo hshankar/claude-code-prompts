@@ -1,24 +1,21 @@
 Commit the local changes to git.
 
 - Run `just precommit` (if a `justfile` exists and contains a `precommit` recipe)
-- Stage changes carefully and individually. Only stage changes that you remember editing yourself.
-- Avoid commands like `git add .` and `git commit -am` which stage all changes. Use commands like `git add` with several filenames.
-- When using CLI tools with file paths containing `$` characters (like React Router's `$param.tsx` files), make sure to:
-  - Use single quotes: `git add 'app/routes/_protected.foo.$bar.tsx'`
-  - Or escape the $ character: `git add app/routes/_protected.foo.\$bar.tsx`
-
-Prepare a commit message.
-
+- Stage individually using `git add <file1> <file2> ...`
+  - Only stage changes that you remember editing yourself.
+  - Avoid commands like `git add .` and `git add -A` and `git commit -am` which stage all changes
+- Use single quotes around file names containing `$` characters
+  - Example: `git add 'app/routes/_protected.foo.$bar.tsx'`
 - If the user's prompt was a compiler or linter error, create a `fixup!` commit message.
-- Otherwise, craft a commit message that:
-  - Starts with a present-tense verb (Fix, Add, Implement, etc.)
-  - Is concise (60-120 characters)
-  - Clearly describes what was changed (not how) by referencing the intent of the original prompt, rather than the implementation details
-  - Does not include the Claude attribution footer: Generated with [Claude Code](https://claude.ai/code)
-  - Ends with a period.
+- Otherwise:
+@../instructions/git-commits.md
+  - Describe the intent of the original prompt
+- Commit messages should not include a Claude attribution footer
+  - Don't write: 🤖 Generated with [Claude Code](https://claude.ai/code)
+  - Don't write: Co-Authored-By: Claude <noreply@anthropic.com>
 
-Run git commit.
+Run git commit without confirming again with the user.
 
-- If pre-commit hooks fail, then there are now local changes.
-- `git add` those changes and try again.
-- Never use `git commit --no-verify`.
+- If pre-commit hooks fail, then there are now local changes
+- `git add` those changes and try again
+- Never use `git commit --no-verify`

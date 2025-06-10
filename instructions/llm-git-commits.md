@@ -1,11 +1,10 @@
 - If a `justfile` exists and contains a `precommit` recipe, run it before committing.
 - Stage individually using `git add <file1> <file2> ...`
-  - Only stage the files you edited
+  - Only stage changes that you remember editing yourself.
   - Avoid commands like `git add .` and `git add -A` and `git commit -am` which stage all changes
 - Use single quotes around file names containing `$` characters
   - Example: `git add 'app/routes/_protected.foo.$bar.tsx'`
-- Prepare a commit message that conforms to the instructions above
-  - Commit messages should not include a Claude attribution footer
+- Commit messages should not include a Claude attribution footer
   - Don't write: 🤖 Generated with [Claude Code](https://claude.ai/code)
   - Don't write: Co-Authored-By: Claude <noreply@anthropic.com>
 - Echo exactly this: Ready to commit: `git commit --message "<message>"`
