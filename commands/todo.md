@@ -17,7 +17,7 @@ Find and implement the next incomplete task from the project todo list.
  - [ ] Create Modal component in `src/components/ui/Modal.tsx`
 
 - Think hard about the plan
-- Confirm the plan with the user before proceeding
+- Confirm the plan with the user before proceeding, with "🤔 Proceed? ➡️  [y/n]"
 - Implement the task
 - Focus ONLY on implementing this specific task
 - Ignore all other tasks in the `.llm/todo.md` file or TODOs in the source code
