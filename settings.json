@@ -1,4 +1,5 @@
 {
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash(cat:*)",
@@ -23,6 +24,7 @@
       "Bash(git test:*)",
       "Bash(grep:*)",
       "Bash(just precommit)",
+      "Bash(just --list)",
       "Bash(ls:*)",
       "Bash(mise tasks:*)",
       "Bash(mise ls-remote:*)",
@@ -30,13 +32,23 @@
       "Bash(mv:*)",
       "Bash(mvn checkstyle:check:*)",
       "Bash(mvn dependency:tree:*)",
+      "Bash(mvn test:*)",
       "Bash(npm --version)",
       "Bash(npm install:*)",
       "Bash(npm run build)",
       "Bash(npm run ci:eslint:*)",
+      "Bash(npm run ci:lint)",
+      "Bash(npm run ci:typecheck:*)",
       "Bash(npm run lint)",
       "Bash(npm run test)",
+      "Bash(npm run test:run:*)",
       "Bash(npm run typecheck)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm test)",
+      "Bash(npm test:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npx vite-node:*)",
       "Bash(op vault list:*)",
       "Bash(rg:*)",
       "Bash(rm:*)",
@@ -60,13 +72,12 @@
     ]
   },
   "enabledMcpjsonServers": [
-      "fetch",
-      "brave-search",
-      "tavily-mcp",
-      "filesystem",
-      "sequential-thinking",
-      "github",
-      "puppeteer"
-  ],
-  "includeCoAuthoredBy": false
+    "fetch",
+    "brave-search",
+    "tavily-mcp",
+    "filesystem",
+    "sequential-thinking",
+    "github",
+    "puppeteer"
+  ]
 }
