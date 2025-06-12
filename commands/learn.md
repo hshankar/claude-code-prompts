@@ -1,5 +1,7 @@
 Document tricky problems in CLAUDE.local.md
 
+$ARGUMENTS
+
 - Think about whether we ran into any tricky problems and figured out a solution
   - CLI commands that failed that we had to try about 3 times
   - Ordering requirements or prerequisites that had to be set up

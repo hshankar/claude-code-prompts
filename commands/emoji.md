@@ -1,5 +1,7 @@
 Add appropriate emoji to the content we're working on to make it more engaging and easier to scan.
 
+$ARGUMENTS
+
 ## 📍 Placement
 - Add emoji at the beginning of headers before the text
 - Include emoji in lists and navigation elements
