@@ -11,10 +11,10 @@
   - Use the format:
 
 ⏺ The previous completed task was:
- - [x] Style button to be compact with icon and hover tooltip
+ - [x] Add feature ABC.
 
  The next incomplete task is:
- - [ ] Create Modal component in `src/components/ui/Modal.tsx`
+ - [ ] Replace DEF with ABC.
 
 - Think hard about the plan
 - Confirm the plan with the user before proceeding, with "🤔 Proceed? ➡️  [y/n]"
