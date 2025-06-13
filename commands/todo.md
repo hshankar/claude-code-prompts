@@ -1,4 +1,4 @@
-Find and implement the next incomplete task from the project todo list.
+📋 Find and implement the next incomplete task from the project todo list.
 
 - Read the file `.llm/todo.md`
   - The file will only exist in this directory or in the main repository if we're in a worktree.
@@ -23,5 +23,5 @@ Find and implement the next incomplete task from the project todo list.
 - Ignore all other tasks in the `.llm/todo.md` file or TODOs in the source code
 - Work through the implementation methodically and completely, addressing all aspects of the task
 - Run appropriate tests and validation to ensure the implementation works
-- After the implementation is complete and verified, update `.llm/todo.md` to mark the completed task as done by changing `- [ ]` to `- [x]`
+- ✅ After the implementation is complete and verified, update `.llm/todo.md` to mark the completed task as done by changing `- [ ]` to `- [x]`
 
