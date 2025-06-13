@@ -10,4 +10,4 @@
 - Don't use abbreviations or acronyms
   - Choose `number` instead of `num` and `greaterThan` instead of `gt`
 - Emoji and unicode characters are welcome
-  - Use them in code, commit messages, and docs
+  - Use them at the beginning of comments, commit messages, and in headers in docs

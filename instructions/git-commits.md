@@ -1,5 +1,6 @@
 - Commit messages should:
   - Start with a present-tense verb (Fix, Add, Implement, etc.)
   - Be concise (60-120 characters)
+  - Be a single line
   - Sound like the title of the issue we resolved, and not include the implementation details we learned during implementation
   - End with a period.
