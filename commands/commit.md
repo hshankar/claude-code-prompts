@@ -17,5 +17,5 @@
 🚀 Run git commit without confirming again with the user.
 
 - If pre-commit hooks fail, then there are now local changes
-- `git add` those changes and try again
-- Never use `git commit --no-verify`
+  - `git add` those changes and try again
+  - Never use `git commit --no-verify`
