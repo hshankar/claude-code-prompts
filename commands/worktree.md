@@ -26,7 +26,8 @@ You are to create a new git worktree in a peer directory for the first available
    - Determine the current repository's root directory
    - Create a worktree name based on the todo item (use kebab-case)
    - Create the worktree in a peer directory: `git worktree add ../<worktree-name> -b <branch-name> ${UPSTREAM_REMOTE:-origin}/${UPSTREAM_BRANCH:-main}`
-     - UPSTREAM_REMOTE and UPSTREAM_BRANCH are real environment variables, not placeholders for you to replace
+     - <worktree-name> and <branch-name> are placeholder for you to replace with names of your choice
+     - UPSTREAM_REMOTE and UPSTREAM_BRANCH are real environment variables
    - The `<branch-name>` should be prefixed with `task/`
    - The `<worktree-name>` should start with the original repository's directory name
 
