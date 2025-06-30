@@ -5,16 +5,14 @@
   - First try reading `./.llm/todo.md`
   - If that doesn't exist, use `git rev-parse --git-common-dir` to find the main repository and check if `.llm/todo.md` exists there.
   - Don't look in other locations. Don't look in the home directory.
-- Find the first line with an incomplete task, with `- [ ] <task>`
+- Find the first line with an incomplete task, with `- [ ] <task>` (not `[x]` or `[>]`)
   - Keep in mind that the completed tasks might not be contiguous, since it's common to prepend new tasks at the top
-- Echo context to the user including the previous completed task and the current task we just found
-  - Use the format:
+- Show the user the task we just found. Use the format:
 
-⏺ The previous completed task was:
- - [x] Add feature ABC.
-
+```markdown
  The next incomplete task is:
  - [ ] Replace DEF with ABC.
+```
 
 - Think hard about the plan
 - Confirm the plan with the user before proceeding, with "🤔 Proceed? ➡️  [y/n]"
