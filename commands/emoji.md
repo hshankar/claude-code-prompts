@@ -1,4 +1,4 @@
-Add appropriate emoji to the content we're working on to make it more engaging and easier to scan.
+😊 Add appropriate emoji to the content we're working on to make it more engaging and easier to scan.
 
 $ARGUMENTS
 
