@@ -15,7 +15,6 @@
 ```
 
 - Think hard about the plan
-- Confirm the plan with the user before proceeding, with "🤔 Proceed? ➡️  [y/n]"
 - Implement the task
 - Focus ONLY on implementing this specific task
 - Ignore all other tasks in the `.llm/todo.md` file or TODOs in the source code
