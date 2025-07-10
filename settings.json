@@ -116,9 +116,7 @@
       "mcp__fetch__fetch",
       "mcp__sentry__find_issues",
       "mcp__sentry__find_projects",
-      "mcp__sentry__get_issue_details",
-      "mcp__tavily-mcp__tavily-extract",
-      "mcp__tavily-mcp__tavily-search"
+      "mcp__sentry__get_issue_details"
     ],
     "deny": [
       "Bash(npm run dev:*)",
@@ -131,8 +129,30 @@
   },
   "enabledMcpjsonServers": [
     "brave-search",
-    "tavily-mcp",
-    "puppeteer",
     "playwright"
-  ]
+  ],
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "file_path=$(jq -r '.tool_input.file_path'); if [ -n \"$file_path\" ]; then cd \"$(git -C \"$(dirname \"$file_path\")\" rev-parse --show-toplevel 2>/dev/null || echo .)\" && just format; fi"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "woof \"Claude: $(basename $(pwd))\""
+          }
+        ]
+      }
+    ]
+  }
 }
