@@ -15,7 +15,6 @@
       "Bash(diff:*)",
       "Bash(find:*)",
       "Bash(gh api:*)",
-      "Bash(gh issue view:*)",
       "Bash(gh issue:*)",
       "Bash(gh pr view:*)",
       "Bash(gh repo view:*)",
@@ -94,6 +93,7 @@
       "Bash(op vault list:*)",
       "Bash(rg:*)",
       "Bash(sed:*)",
+      "Bash(sentry-cli issues:*)",
       "Bash(task help)",
       "Bash(test:*)",
       "Bash(touch:*)",
@@ -102,6 +102,7 @@
       "Bash(uv tool run pre-commit run:*)",
       "Bash(yarn test:*)",
       "Read(~/.zshrc)",
+      "WebFetch(domain:developer.1password.com)",
       "WebFetch(domain:docs.github.com)",
       "WebFetch(domain:docs.sentry.io)",
       "WebFetch(domain:docusaurus.io)",
@@ -132,17 +133,6 @@
     "playwright"
   ],
   "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit|MultiEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "file_path=$(jq -r '.tool_input.file_path'); if [ -n \"$file_path\" ]; then cd \"$(git -C \"$(dirname \"$file_path\")\" rev-parse --show-toplevel 2>/dev/null || echo .)\" && just format; fi"
-          }
-        ]
-      }
-    ],
     "Stop": [
       {
         "matcher": "",
@@ -154,5 +144,6 @@
         ]
       }
     ]
-  }
+  },
+  "model": "opus"
 }

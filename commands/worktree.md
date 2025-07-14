@@ -10,12 +10,15 @@ You are to create a new git worktree in a peer directory for the first available
 ## Steps to follow:
 
 1. **Find the next available todo**:
+- Spawn a sub-agent or sub-task to find the next task in the todo list.
   - Read the file `./.llm/todo.md`. The file will only exist in this directory. Don't look in other locations. Don't look in the home directory.
   - Look for the first todo that is marked with `[ ]` (not `[x]` or `[>]`)
   - This will be the todo to work on
+- End the sub-agent or sub-task here and share back the entire task information verbatim.
   - If no available todos exist, inform the user that all todos are either completed or in progress
 
 2. **Update the todo status**:
+   - Spawn a sub-agent or sub-task to update the task to show that it's in progress
    - Change the selected todo from `[ ]` to `[>]` in the original todo list
    - Add a comment indicating which worktree it's being worked on in, e.g.:
      ```markdown
@@ -23,6 +26,7 @@ You are to create a new git worktree in a peer directory for the first available
      ```
 
 3. **Create the git worktree**:
+   - In parallel with marking the task in progress, spawn a second sub-agent or sub-task to create the git worktree
    - Determine the current repository's root directory
    - Create a worktree name based on the todo item (use kebab-case)
    - Create the worktree in a peer directory: `git worktree add ../<worktree-name> -b <branch-name> ${UPSTREAM_REMOTE:-origin}/${UPSTREAM_BRANCH:-main}`
@@ -30,10 +34,10 @@ You are to create a new git worktree in a peer directory for the first available
      - `UPSTREAM_REMOTE` and `UPSTREAM_BRANCH` are real environment variables
    - The `<branch-name>` should be prefixed with `task/`
    - The `<worktree-name>` should start with the original repository's directory name
-
-4. **Set up the todo file in the new worktree**:
    - If there is a `.envrc` file in this directory, copy it into the new directory and run `direnv allow ../<worktree-name>`
    - Run `mise trust ../<worktree-name>`
+
+- Set up the todo file in the new worktree:
    - Create the directory `.llm` if it doesn't exist
    - Create `.llm/todo.md` with ONLY this single todo item:
 
