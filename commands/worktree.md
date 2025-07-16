@@ -1,6 +1,6 @@
 # 🌳 Create Git Worktree for Next Available Todo
 
-You are to create a new git worktree in a peer directory for the first available todo item (not completed and not already in progress).
+You are to create $ARGUMENTS new git worktree(s) in peer directories for the first available todo items (not completed and not already in progress).
 
 ## Todo Status Icons:
 - `[ ]` - Not started
@@ -51,3 +51,32 @@ When this task is complete:
 - Edit the original task list at `<this directory>/.llm/todo.md`, on line <line>
 - Update the todo status from `[>]` to `[x]`
 ```
+
+## Conclusion
+
+Run a command to create a new terminal tab in tme newly created worktree, and run `claude --dangerously-skip-permissions /todo` in that tab.
+
+If we are running in iTerm:
+
+```console
+osascript -e '
+tell application "iTerm"
+    tell current window
+        create tab with default profile command "claude code --dangerously-skip-permissions /todo" working directory "../<worktree-name>"
+    end tell
+end tell
+'
+```
+
+If we are running in xfce4-terminal:
+
+```console
+xfce4-terminal --tab --working-directory="../<worktree-name>" -x bash -c "claude code --dangerously-skip-permissions /todo; exec bash"
+```
+
+## Loop
+
+Say how many worktrees you have created.
+
+Repeat the instructions to create another worktree until you have created $ARGUMENTS worktrees.
+
