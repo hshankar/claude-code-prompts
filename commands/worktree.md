@@ -14,7 +14,7 @@ The task list is in `.llm/todo.md`. The format is:
 ## Steps
 
 - Find the next incomplete task
-  - Run `todo-get $(dirname $(git rev-parse --git-common-dir))/.llm/todo.md`
+  - Run `todo-get $(git rev-parse --show-toplevel)/.llm/todo.md`
   - It returns the first `Not started` task
 
 - Come up with a kebab-case task name based on the todo item (e.g., "auth-feature", "database-migration")
@@ -35,19 +35,22 @@ Run a command to create a new terminal tab in the newly created worktree, and ru
 If we are running in iTerm:
 
 ```console
-osascript -e '
-tell application "iTerm"
+osascript -e 'tell application "iTerm"
     tell current window
-        create tab with default profile command "claude code --dangerously-skip-permissions /todo" working directory "<worktree-name>"
+        create tab with default profile
+        tell current tab
+            tell current session
+                write text "cd <worktree-absolute-path> && claude code --dangerously-skip-permissions /todo"
+            end tell
+        end tell
     end tell
-end tell
-'
+end tell'
 ```
 
 If we are running in xfce4-terminal:
 
 ```console
-xfce4-terminal --tab --working-directory="../<worktree-name>" -x bash -c "claude code --dangerously-skip-permissions /todo; exec bash"
+xfce4-terminal --tab --working-directory="<worktree-absolute-path>" -x bash -c "cd <worktree-absolute-path> && claude code --dangerously-skip-permissions /todo; exec bash"
 ```
 
 ## Loop
