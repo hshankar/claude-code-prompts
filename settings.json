@@ -136,14 +136,16 @@
       "Bash(npm run serve:*)",
       "Bash(npm run start:*)",
       "Bash(npm run start &)",
+      "Bash(git add -f:*)",
+      "Bash(git add --force:*)",
       "Bash(git push:*)",
+      "Bash(git worktree remove --force:*)",
       "Bash(rm -rf: *)",
       "Bash(op: *)"
     ]
   },
   "enabledMcpjsonServers": [
-    "brave-search",
-    "playwright"
+    "brave-search"
   ],
   "hooks": {
     "Stop": [
@@ -152,7 +154,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "woof \"Claude: $(basename $(pwd))\""
+            "command": "if [ \"$NOTIFICATIONS\" = \"true\" ]; then woof \"Claude: $(basename $(pwd))\"; else echo \"NOTIFICATIONS=$NOTIFICATIONS (not woofing)\"; fi"
           }
         ]
       }

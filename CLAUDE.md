@@ -34,10 +34,7 @@
 
 @instructions/tool-use.md
 
-## User Context
+## 📋 Taskwarrior
 
-Just before stopping and giving control back to the user, write:
+@instructions/taskwarrior.md
 
-PROMPT: <prompt>
-
-Where the promt is a concise one-line summary of the user's original prompt, NOT anything more recent.
