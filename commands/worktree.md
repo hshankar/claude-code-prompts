@@ -40,7 +40,7 @@ osascript -e 'tell application "iTerm"
         create tab with default profile
         tell current tab
             tell current session
-                write text "cd <worktree-absolute-path> && claude code --dangerously-skip-permissions /todo"
+                write text "cd <worktree-absolute-path> && claude --dangerously-skip-permissions /todo"
             end tell
         end tell
     end tell
