@@ -124,13 +124,8 @@
       "WebFetch(domain:taskwarrior.org)",
       "WebFetch(domain:vite.dev)",
       "WebFetchTool(domain:raw.githubusercontent.com)",
-      "WebFetchTool(domain:www.anthropic.com)",
-      "mcp__brave-search__brave_web_search",
-      "mcp__fetch__fetch",
-      "mcp__sentry__find_issues",
-      "mcp__sentry__find_projects",
-      "mcp__sentry__get_issue_details"
-    ],
+      "WebFetchTool(domain:www.anthropic.com)"
+    ]
     "deny": [
       "Bash(npm run dev:*)",
       "Bash(npm run serve:*)",
@@ -145,7 +140,6 @@
     ]
   },
   "enabledMcpjsonServers": [
-    "brave-search"
   ],
   "hooks": {
     "Stop": [
