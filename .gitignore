@@ -2,4 +2,6 @@
 projects/
 statsig/
 todos/
-.envrc
+.envrcshell-snapshots
+ide
+shell-snapshots
