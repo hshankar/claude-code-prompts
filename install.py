@@ -227,6 +227,16 @@ def install_settings():
                         dst_file = dest_path / rel_path
                         
                         if dst_file.exists():
+                            # Check if content is identical
+                            try:
+                                with open(src_file, 'r', encoding='utf-8') as f1, open(dst_file, 'r', encoding='utf-8') as f2:
+                                    if f1.read() == f2.read():
+                                        print(f"✅ {dst_file} is already up to date")
+                                        continue
+                            except (UnicodeDecodeError, IOError):
+                                # For binary files or read errors, fall back to permission check
+                                pass
+                            
                             if not ask_permission(str(dst_file), {"entire file"}):
                                 print(f"⏭️  Skipped {dst_file}")
                                 continue
@@ -236,7 +246,17 @@ def install_settings():
                         print(f"📋 Copied {dst_file}")
                 
             else:
-                # For individual files, ask permission
+                # For individual files, check content first
+                try:
+                    with open(source_path, 'r', encoding='utf-8') as f1, open(dest_path, 'r', encoding='utf-8') as f2:
+                        if f1.read() == f2.read():
+                            print(f"✅ {file_name} is already up to date")
+                            continue
+                except (UnicodeDecodeError, IOError):
+                    # For binary files or read errors, fall back to permission check
+                    pass
+                
+                # Content differs, ask permission
                 if not ask_permission(str(dest_path), {"entire file"}):
                     print(f"⏭️  Skipped {file_name}")
                     continue
