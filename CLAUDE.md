@@ -29,12 +29,3 @@
 ## 📝 Git Commits
 
 @instructions/llm-git-commits.md
-
-## 🛠️ Tool Use
-
-@instructions/tool-use.md
-
-## 📋 Taskwarrior
-
-@instructions/taskwarrior.md
-

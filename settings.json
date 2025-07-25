@@ -125,7 +125,7 @@
       "WebFetch(domain:vite.dev)",
       "WebFetchTool(domain:raw.githubusercontent.com)",
       "WebFetchTool(domain:www.anthropic.com)"
-    ]
+    ],
     "deny": [
       "Bash(npm run dev:*)",
       "Bash(npm run serve:*)",
