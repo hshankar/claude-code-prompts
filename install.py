@@ -163,11 +163,11 @@ def install_settings():
     
     # Files to copy (excluding README, .gitignore, and this script)
     files_to_copy = [
+        "CLAUDE.md",
         "settings.json",
         "agents/",
         "commands/", 
-        "instructions/",
-        "shared/"
+        "instructions/"
     ]
     
     for file_name in files_to_copy:
